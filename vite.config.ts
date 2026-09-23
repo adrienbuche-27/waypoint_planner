@@ -6,6 +6,8 @@ export default defineConfig({
   // Relative base so dist/ works from any static host or sub-folder.
   base: './',
   plugins: [react()],
+  // MapLibre creates its worker with { type: 'module' }.
+  worker: { format: 'es' },
   test: {
     environment: 'node',
     include: ['src/**/*.test.ts'],
